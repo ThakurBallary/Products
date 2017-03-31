@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="well cardbtr">
+    <%= link_to '<span class="glyphicon glyphicon-upload"></span> Upload'.html_safe, new_resume_path, remote: true, class: "btn btn-primary", 'data-toggle' => "tooltip", 'title' => "Resume" %>
+  </div>
+  <!--<div class="new-product"></div> -->
+  
+  <% if !flash[:notice].blank? %>
+    <div class="alert alert-info">
+    <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <table class="table table-hover cardbtr">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Download Link</th>
+        <td>&nbsp;</td>
+      </tr>
+    </thead>
+    <tbody class="product-index">
+      <%= render "index" %>
+    </tbody>
+  </table>
+</div>
+<div id="product-modal" class="modal fade"></div>
