@@ -1,0 +1,11 @@
+<% @services.each do |service| %>
+  <tr>
+    <td><%= service.name %></td>
+    <td><%= service.products.size %></td>
+    <td>
+    <%= link_to '<span class="glyphicon glyphicon-list"></span> View'.html_safe, {:controller => 'products', :service_id => service.id}, class: "btn btn-info", 'data-toggle' => "tooltip", 'title' => "Products" %>
+    <%= link_to '<span class="glyphicon glyphicon-edit"></span> &nbsp; Edit'.html_safe, edit_service_path(service), remote: true, class: "btn btn-default" %> 
+    <%= link_to '<span class="glyphicon glyphicon-trash"></span>'.html_safe, service_delete_path(service), remote: true, class: "btn btn-danger", 'data-toggle' => "tooltip", 'title' => "Delete" %>
+    </td>
+  </tr>
+<% end %>

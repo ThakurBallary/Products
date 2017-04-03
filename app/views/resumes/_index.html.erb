@@ -1,0 +1,7 @@
+<% @resumes.each do |resume| %>
+	<tr>
+	  <td><%= resume.name %></td>
+	  <td><%= link_to resume.attachment_identifier, resume.attachment_url %></td>
+	  <td><%= link_to '<span class="glyphicon glyphicon-trash"></span> &nbsp; Delete'.html_safe, resume_delete_path(resume), remote: true, class: "btn btn-danger" %></td>
+	</tr>
+<% end %>
